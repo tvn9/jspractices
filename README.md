@@ -75,7 +75,7 @@ empty.length                        // => 0: the array has no value
 // Arrays and objects can hold other array and objects:
 var graph = [                       // An array with 2 elements.
    {x:3, y:-3},                     // Each element is an object.
-   {x:5, y:-8}
+   {x:-5, y:8}
 ];
 
 var vaccine = {                        // An object with 2 properties
@@ -84,9 +84,11 @@ var vaccine = {                        // An object with 2 properties
 };
 ```
 
-### Expression in JavaScript
+### Expression & Statements in JavaScript
 
-The most common ways to form expressions in JavaScript is to use operators:
+The most common ways to form expressions in JavaScript is to use operators. Roughly, an expression is the smalless operation that computes a value but doesn't do anything: it doesn't alter the programe state in any way.
+
+If the phrases of JavaScript are expressions, then the full sentences are statements, JavaScript code lines the end with semincolons are statements. In some code block JavaScript statements do not end with semincolons. There is actually a lot of overlap between statements and expressions. The other broad catergory of statement is ***control structures***, such as conditionals and loops.
 
 ```js
 // Operators act on values (the operands) to produce a new value.
@@ -124,3 +126,93 @@ false == (a > y)                    // => ture: false is equal to false, a > y =
 
 // Logical operators combine or invert boolean values
 (a == 2) && (b == 3)                // => true: both comparisons are true. && is AND
+(a > 3) || (b < 3)                  // => false: neither comparison is true. || is OR
+!(x == y)                           // => true: ! inverts a boolean value
+```
+
+### Function in JavaScript
+
+A function is a named and parameterized block of JavaScript code that you define once, and can then invole over and over again.
+
+Examples of functions:
+
+```js
+// Functions are parameteried blocks of JavaScript code that we can invoke.
+function addNum(a) {                // Define a function named 'addNum' with parameter 'a'
+   return a + 5;                    // Return a value 5 larger than the value passed in
+}                                   // Functions are enclosed in curly braces
+
+addNum(b)                           // => 8: b is 3, so this invocation return 3+5
+
+var square = function(a) {          // Functions are values and can be assigned to vars
+   return a * a;                    // Compute the function's value
+};
+
+square(addNum(b))                   // => 64: invoke two functions in one expression
+```
+
+### JavaScript Methods
+
+When combine function with objects, we get methods:
+
+```js
+// When function are assigned to the properties of an object, we call them "methods".
+// All JavaScript objects have methods:
+var a = [];                         // Declare an empty array
+
+a.push(1, 2, 3, 4, 5);              // The push() method adds elements to an array
+
+a.reverse();                        // [1,2,3].reverse(); reverse the order of elements
+```
+
+```js
+
+// We can define our own methods, too. The 'this' keyword refers to the object
+// on which the method is defined: in this case, the points array from above.
+graph.dist = function() {
+   var p1 = this[0];                // First element of array we're invoked on
+   var p2 = this[1];                // Second element of the "this" object
+   var a = p2.x - p1.x;             // Difference in X coordinates
+   var b = p2.y - p1.y;             // Difference in Y coordinates
+   return Math.sqrt(a * a) + (b * b);     // Math.sqrt() computes the square root (Pythagorean theorem)
+};
+
+graph.dist();                       // => 1.414: distance between the 2 points
+
+```
+
+Here are some functions whose bodies demonstrade common JavaScript control structure statemens:
+
+```js
+// JavaScript statements include conditionals and loops using the syntax
+// of C, C++, Java, and other languages.
+function abs(x) {                   // A function to compute the absolute value
+   if (x >= 0) {                    // the if statement...
+      return x;                     // executes the code if the expression is true
+   } else {                         // The optional else clause executes its code if the x is false
+      return -x;                    // return x is false
+   }
+}                                   // note the return statement nested inside if/else.
+```
+
+```js
+function factorial(n) {                // A function to compute factorials
+   var product = 1;                    // Start with a product of 1
+   while(n > 1) {                      // Repeat statements in {} while expr in () is true
+      product *= n;                    // Shortcut for product = product * n;
+      n--;                             // Shortcut for n = n - 1;
+   }
+   return product;                     // Return the product
+}
+factorial(4)                           // => 24: 1*4*3*2
+```
+
+```js
+function factorial2(n) {               // Another version using a different loop
+   var i, product = 1;                 // Start with 1
+   for (i = 2; i <= n; i++)            // Automatically increment i from 2 up to n
+      product *= i;                    // Compute this each time. {} not needed for 1-line loops
+   return product;                     // Return the factorial
+}
+factorial2(5)                          // => 120: 1*2*3*4*5
+```
