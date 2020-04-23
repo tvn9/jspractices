@@ -1,6 +1,6 @@
 # JAVASCRIPT PRACTICE
 
-A project to document Javascript Fundamental Concepts and code exercises, the goal of this project is to review all JavaScript core features and document the knowledge learned in short summarized text and follow with code examples.
+A project to document Javascript Fundamental Concepts and code exercises, the goal of this project is to review all JavaScript core features and document the knowledge learned in short summarized text, follow with code examples.
 
 ## Attribution
 
@@ -18,26 +18,47 @@ JavaScript is the high-level, dynamic, untyped interpreted programming language 
 
 ```js
 // Anything following double slashes is an English comment.
-// Comment are english text that explain the JavaScript code.
+// Comment are english text that explains the JavaScript code.
 
-// A veriable is a symbolic name for a value.
+// A veriable is a symbolic name for a val.
 // Variables are declared with the var keyword
 
-var x;   // Declare a variable name x.
+var val;   // Declare a variable name val.
 
-// Value can be assinged to a variable with and = sign
-x = 5;   // Now variable x has the value 5
-x        // => 5: the output of x after evaluates to it value
+// Value can be assinged to a variable with an = sign
+val = 5;   // Now variable val has the value 5
+val        // => 5: the output of val after evaluates to its value
 
 // JavaScript supports serveral types of values
-x = 1;                           // Numbers.
-x = 0.01;                        // One Number type for interger and real number.
-x = "Hello World";               // Strings of text in quotation marks.
-x = 'JavaScript';                // String is also work in single  quatation.
-x = true;                        // Boolean values.
-x = false;                       // The other Boolean value.
-x = null;                        // Null is a special value that means "no value".
-x = undefined                    // Undefined is liek null.
+val = 1;                           // Numbers.
+val = 0.01;                        // One Number type for interger and real number.
+val = "Hello World";               // Strings of tevaluet in quotation marks.
+val = 'JavaScript';                // String is also work in single  quatation.
+val = true;                        // Boolean values.
+val = false;                       // The other Boolean value.
+val = null;                        // Null is a special value that means "no value".
+val = undefined;                   // Undefined is like null.
 
 ```
 
+Two other important types of JavaScript are **object** and **arrays**.
+
+```js
+// JavaScrip's most important data type is the object.
+// An object is a collection of name/value pairs, or a tring to value map.
+
+var car = {                         // Objeces are enclosed in curly braces.
+   year: 2019,                      // The property year has the value 2019
+   make: 'Toyota',                  // The property make has the value 'Toyota'
+   model: '4Runner SR5',
+   color: 'Silver'
+};
+
+// To access the object data use . or []:
+car.year                            // => 2019
+car.make                            // => 'Toyota'
+car.model                           // => '4Runner SR5'
+car['Silver']                       // => true: another way to access property values.
+car.price = '$29,000';              // Create new properties by assignment.
+car.owner = {};                     // {} is an empty object with no properties.
+```
