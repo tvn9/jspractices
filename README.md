@@ -82,6 +82,45 @@ var vaccine = {                        // An object with 2 properties
    trial1: [ [1, 2, 3], [4, 5, 6] ],   // The value of each propery is an array.
    trial2: [ [1, 2, 3], [4, 5, 6] ]    // The elements of the arrays are arrays.
 };
-
 ```
 
+### Expression in JavaScript
+
+The most common ways to form expressions in JavaScript is to use operators:
+
+```js
+// Operators act on values (the operands) to produce a new value.
+// Arithmetic operators are the most common:
+300 + 250                           // => 550: addition
+550 - 300                           // => 250: subtraction
+50 * 11                             // => 550: multiplication
+550 / 2                             // => 275: division
+
+points[1].x - points[0].x           // => 1: more complicated operands also work
+
+'5' + '3'                           // => '53': + operator, concatenates strongs
+
+// JavaScript defines some shorthand arimethic operators
+var count = 0;                      // Define a variable
+count++;                            // Increment the variable
+count--;                            // Decrement the variable
+count += 2;                         // Add 2: same as count = count + 2;
+count *= 2;                         // Multiply by 2: same as count = count * 2;
+count                               // => 6: variable names are expressions, too.
+
+// Equality and relational operators test whether two values are equal, unequal, less than,
+// greater than, and so on. They evaluete to true or false.
+var a = 2, b = 3;                   // These are assignment, not equality tests
+
+a == b                              // => false: equality
+a != b                              // => true: inequality
+a < b                               // => true: less-than
+a <= b                              // => true: less-than or equal
+a > b                               // => false: greater-than
+a >= b                              // => false: greater-than or equal
+'two' == 'three'                    // => false: the two strings are different
+'two' > 'three'                     // => true: 'tw' is alphabetically greater than 'th'
+false == (a > y)                    // => ture: false is equal to false, a > y = false
+
+// Logical operators combine or invert boolean values
+(a == 2) && (b == 3)                // => true: both comparisons are true. && is AND
