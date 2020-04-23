@@ -61,4 +61,27 @@ car.model                           // => '4Runner SR5'
 car['Silver']                       // => true: another way to access property values.
 car.price = '$29,000';              // Create new properties by assignment.
 car.owner = {};                     // {} is an empty object with no properties.
+
+// JavaScript also supports arrays (numerically indexed lists) of values:
+var primes = [2, 3, 5, 7, 11, 13];  // An array of 6 values.
+primes[0]                           // => 2: the first elment (index 0) of the array.
+primes.length                       // => 6: the number of elements in the array.
+primes[primes.length-1]             // => 13: the last element of the array.
+primes[3] = 19;                     // assign new value 19 to index 3.
+primes[3] = 'Hello Array';          // replace index 3 with string 'Hello Array'.
+var empty = [];                     // declare the a new array empty with no elements.
+empty.length                        // => 0: the array has no value
+
+// Arrays and objects can hold other array and objects:
+var graph = [                       // An array with 2 elements.
+   {x:3, y:-3},                     // Each element is an object.
+   {x:5, y:-8}
+];
+
+var vaccine = {                        // An object with 2 properties
+   trial1: [ [1, 2, 3], [4, 5, 6] ],   // The value of each propery is an array.
+   trial2: [ [1, 2, 3], [4, 5, 6] ]    // The elements of the arrays are arrays.
+};
+
 ```
+
