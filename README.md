@@ -216,3 +216,30 @@ function factorial2(n) {               // Another version using a different loop
 }
 factorial2(5)                          // => 120: 1*2*3*4*5
 ```
+
+### JavaScript is an Object-Oriented Language
+
+Here are some examples:
+
+```js
+// Define a constructor function to initialize a new Point object
+function Point(x, y) {                 // By convention, constructors start with capitals
+   this.x = x;                         // this keyword is the new object being initialized
+   this.y = y;                         // store function arguments as object properties
+}                                      // No return is nessary
+
+// Use a constructor function with the keyword "new" to create instances
+var p = new Point(1, 1);               // The geometric point (1, 1)
+
+// Define methods for Point objects by assigning them to the prototype
+// object associated with the constructor function.
+Point.prototype.r = function() {
+   return Math.sqrt( (this.x * this.y) + (this.y * this.y) ); // Return the square root of x + y
+};
+
+// Use a constructor function with the keyword "new" to create instances
+var p = new Point(1, 1);   // The geometric point (1, 1)
+
+```
+
+
