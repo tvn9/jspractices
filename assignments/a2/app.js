@@ -1,3 +1,5 @@
+"use strict";
+
 // Data types
 // Number = 9
 // String = 'First Name';
@@ -23,7 +25,23 @@ const population = 334233854;
 const isIsland = false;
 let language;
 
+language = 'English';
+
 console.log('The country is', unitedState);
 console.log('The population', population);
 console.log('The country main language is', language);
 console.log('Is the United States an island?', isIsland);
+
+let massMark = 78;
+let heightMark = 1.69;
+let massJohn = 92;
+let heightJohn = 1.95;
+
+let BMIMark = massMark / (heightMark * heightMark);
+let BMIJohn = massJohn / (heightJohn * heightJohn);
+
+let markHigherBMI = BMIMark > BMIJohn;
+
+console.log(`Mark's BMI is:`, BMIMark);
+console.log(`John's BMI is:`, BMIJohn);
+console.log(`Mark's BMI is heigher than John's BMI?`, markHigherBMI);
